@@ -1,21 +1,19 @@
 import React, { useDebugValue, useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-
-const px = (n) => n / 2420 * (window as any).pageWidth
+import {px} from '../shared/px'
+import { baseEchartOptions } from '../shared/base-echart-options';
+import { createEchartOptions } from '../shared/create-echart-options';
 
 export const Chart1 = () => {
   const divRef = useRef(null)
   useEffect(() => {
     const myEchart = echarts.init(divRef.current)
-    myEchart.setOption({
-      textStyle: {
-        fontSize: px(12)
-      },
+    myEchart.setOption(createEchartOptions({
+      ...baseEchartOptions,
       xAxis: {
         type: 'category',
         data: ['城关区', '七里河区', '西固区', '安宁区', '红谷区', '永登区', '皋兰区', '榆中区', '兰州新区'],
         axisLabel: {
-          fontSize: px(12),
           margin: 3,
           formatter(val) {
             if (val.length > 2) {
@@ -34,19 +32,12 @@ export const Chart1 = () => {
         axisLine: {
           show: true,
           lineStyle: {
-            color: '#0a5299'
+            color: '#083B70'
           }
         },
       },
-      grid: {
-        left: px(40),
-        right: px(40),
-        bottom: px(40),
-        top: px(40)
-      },
       yAxis: {
         axisLabel: {
-          fontSize: px(12),
           margin:3
         },
         splitLine: {show: false},
@@ -62,7 +53,7 @@ export const Chart1 = () => {
         type: 'bar',
         data: [40, 30, 25, 18, 23, 14, 20, 28, 40]
       }]
-    })
+    }))
   }, [])
 
   return (
