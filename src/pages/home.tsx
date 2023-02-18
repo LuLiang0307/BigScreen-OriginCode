@@ -5,11 +5,11 @@ import {Chart1} from '../components/chart-1'
 import {Chart2} from '../components/chart-2'
 
 export const Home = () => {
-
+  const year = new Date().getFullYear();
 
   return (
     <div className='home'>
-      <div className="header" style={{ backgroundImage: `url(${headerBg})` }}></div>
+      <header style={{ backgroundImage: `url(${headerBg})` }}></header>
       <main>
         <section className='section1'>
           <Chart1 />
@@ -21,6 +21,9 @@ export const Home = () => {
         <section className='bordered section4'></section>
         <section className='bordered section5'></section>
       </main>
+      <footer>
+        大屏数据平台利用大数据技术采集犯罪作案信息是一套实时监控的数据系统Copyright&copy; {year}兰州市公安局
+      </footer>
     </div>
   );
 };
