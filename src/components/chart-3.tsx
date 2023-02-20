@@ -31,6 +31,7 @@ export const Chart3 = () => {
       },
       yAxis: {
         type: 'value',
+        boundaryGap: false,
         splitLine: {lineStyle: {color: '#073E78'}},
         axisLabel: {
           formatter: function (value) {
