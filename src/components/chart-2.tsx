@@ -1,15 +1,20 @@
-import React, { useDebugValue, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import { baseEchartOptions } from '../shared/base-echart-options';
-import { px } from '../shared/px';
-import { Redirect } from 'react-router-dom';
 import { createEchartOptions } from '../shared/create-echart-options';
+import { px } from '../shared/px';
 
 export const Chart2 = () => {
   const divRef = useRef(null)
   useEffect(() => {
     const myEchart = echarts.init(divRef.current)
     myEchart.setOption(createEchartOptions({
+      legend:{
+        data: ['破案排名1','破案排名2'],
+        bottom: px(10),
+        textStyle: {color: 'white'},
+        itemWidth: px(30),
+        itemHeight: px(16)
+      },
       xAxis: {
         type: 'value',
         boundaryGap: [0, 0.01],
@@ -69,10 +74,10 @@ export const Chart2 = () => {
     <div className='bordered 破获排名'>
       <h2>案件破获排名</h2>
       <div ref={divRef} className="chart" />
-      <div className="legend">
+      {/* <div className="legend">
         <span className="first" /> 破案排名1
         <span className="second" /> 破案排名2
-      </div>
+      </div> */}
     </div>
   )
 }
