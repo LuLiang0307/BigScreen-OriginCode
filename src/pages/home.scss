@@ -81,7 +81,7 @@
     .section5 {
       grid-area: box5;
     }
-    .管辖统计, .破获排名, .发案趋势, .时段分析, .战果{
+    .管辖统计, .破获排名, .发案趋势, .时段分析, .战果, .籍贯分布地{
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -146,6 +146,10 @@
 
         }
       }
+    }
+    .籍贯分布地 {
+      height: px(753); 
+      background: transparent;
     }
   }
  
