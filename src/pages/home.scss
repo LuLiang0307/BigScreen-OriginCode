@@ -102,7 +102,7 @@
     .时段分析,
     .战果,
     .籍贯分布地,
-    .年龄分布 {
+    .年龄段 {
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -305,6 +305,10 @@
         .legend {
           justify-content: flex-start;
         }
+      }
+      &-图3 {
+        border: 1px solid #08397d;
+        h3 {font-size: px(20); color: #7ab6db; margin-top: px(6);}
       }
     }
 
