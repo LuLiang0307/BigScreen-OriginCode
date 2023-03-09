@@ -94,6 +94,9 @@
 
     .section5 {
       grid-area: box5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .管辖统计,
@@ -102,7 +105,10 @@
     .时段分析,
     .战果,
     .籍贯分布地,
-    .年龄段 {
+    .年龄段,
+    .类型统计,
+    .街道统计,
+    .手段分析 {
       height: px(315);
       display: flex;
       flex-direction: column;
@@ -117,7 +123,10 @@
         text-shadow: 0 0 px(3) white;
         font-size: px(16);
       }
-
+      .charts {
+        width: 100%;flex: 1;
+        display: flex;
+      }
       .chart {
         width: 100%;
         flex: 1;
@@ -236,9 +245,6 @@
       height: px(363);
 
       >.charts {
-        width: 100%;
-        flex: 1;
-        display: flex;
         padding: px(30);
       }
 
@@ -311,6 +317,11 @@
         h3 {font-size: px(20); color: #7ab6db; margin-top: px(6);}
       }
     }
-
+    .类型统计,.街道统计{
+      height: px(317);
+    }
+    .手段分析{
+      height: px(455);
+    }
   }
 }

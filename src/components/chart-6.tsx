@@ -8,9 +8,9 @@ export const Chart6 = () => {
   const divRef = useRef(null);
   const colors = { '青海省': '#BB31F7', '甘肃省': '#15B8FD', '四川省': '#06E1EE' };
   useEffect(() => {
-    var myEchart = echarts.init(divRef.current);
+    var myChart = echarts.init(divRef.current);
     echarts.registerMap('CN', china);//注册地图
-    myEchart.setOption(createEchartOptions({
+    myChart.setOption(createEchartOptions({
       xAxis: {show: false},
       yAxis: {show: false},
       series: [

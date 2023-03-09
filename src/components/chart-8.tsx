@@ -7,8 +7,8 @@ export const Chart8 = () => {
   const divRef = useRef(null);
     const colors = ['#856BED', '#F46064', '#F38E1C', '#1CDB7C', '#33A4FA'];
     useEffect(() => {
-    var myEchart = echarts.init(divRef.current);
-    myEchart.setOption(createEchartOptions({
+    var myChart = echarts.init(divRef.current);
+    myChart.setOption(createEchartOptions({
       color: colors,
       xAxis: { show: false },
       yAxis: { show: false },

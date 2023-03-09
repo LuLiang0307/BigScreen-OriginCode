@@ -6,8 +6,8 @@ import { createEchartOptions } from '../shared/create-echart-options';
 export const Chart7 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    var myEchart = echarts.init(divRef.current);
-    myEchart.setOption(createEchartOptions({
+    var myChart = echarts.init(divRef.current);
+    myChart.setOption(createEchartOptions({
       color: ['#8D70F8', '#33A4FA'],
       xAxis: { show: false },
       yAxis: { show: false },

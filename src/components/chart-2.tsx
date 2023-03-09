@@ -6,8 +6,8 @@ import { px } from '../shared/px';
 export const Chart2 = () => {
   const divRef = useRef(null)
   useEffect(() => {
-    const myEchart = echarts.init(divRef.current)
-    myEchart.setOption(createEchartOptions({
+    const myChart = echarts.init(divRef.current)
+    myChart.setOption(createEchartOptions({
       legend:{
         data: ['破案排名1','破案排名2'],
         bottom: px(10),

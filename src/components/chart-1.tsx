@@ -6,8 +6,8 @@ import { createEchartOptions } from '../shared/create-echart-options';
 export const Chart1 = () => {
   const divRef = useRef(null)
   useEffect(() => {
-    const myEchart = echarts.init(divRef.current)
-    myEchart.setOption(createEchartOptions({
+    const myChart = echarts.init(divRef.current)
+    myChart.setOption(createEchartOptions({
       ...baseEchartOptions,
       xAxis: {
         type: 'category',

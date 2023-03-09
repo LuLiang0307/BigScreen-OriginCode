@@ -6,8 +6,8 @@ import { px } from '../shared/px';
 export const Chart3 = () => {
   const divRef = useRef(null)
   useEffect(() => {
-    const myEchart = echarts.init(divRef.current)
-    myEchart.setOption(createEchartOptions({
+    const myChart = echarts.init(divRef.current)
+    myChart.setOption(createEchartOptions({
       legend: {
         bottom: px(10),
         textStyle: {color: 'white'},

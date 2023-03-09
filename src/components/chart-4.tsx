@@ -6,8 +6,8 @@ import { px } from '../shared/px';
 export const Chart4 = () => {
   const divRef = useRef(null)
   useEffect(() => {
-    const myEchart = echarts.init(divRef.current)
-    myEchart.setOption(createEchartOptions({
+    const myChart = echarts.init(divRef.current)
+    myChart.setOption(createEchartOptions({
       xAxis: {
         type: 'category',
         data: ['02', '04', '06', '08', '10', '12', '14', '16', '18', '20', '22', '24'],
