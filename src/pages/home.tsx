@@ -31,7 +31,7 @@ export const Home = () => {
         </section>
         <section className='section4'>
           <Chart6 />
-          <div className='bordered 年龄分布'>
+          <div className='bordered 年龄段'>
             <h2>兰州市犯罪人员年龄分布</h2>
             <div className="charts">
               <Chart7 />

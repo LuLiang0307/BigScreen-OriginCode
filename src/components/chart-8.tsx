@@ -11,9 +11,10 @@ export const Chart8 = () => {
   }, []);
 
   return (
-    <div className='年龄分布-图2'>
-      <div ref={divRef} className="chart" />
-      8
+    <div className="年龄段-图2">8
+      <div ref={divRef} className="chart">
+
+      </div>
     </div>
   )
 }
