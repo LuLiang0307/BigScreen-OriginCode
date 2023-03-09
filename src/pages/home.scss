@@ -238,7 +238,6 @@
       >.charts {
         width: 100%;
         flex: 1;
-        border: 1px solid red;
         display: flex;
         padding: px(30);
       }
@@ -247,23 +246,24 @@
       &-图2,
       &-图3 {
         flex: 1;
-        border: 1px solid red;
         display: flex;
         flex-direction: column;
       }
 
-      &-图1 {
+      &-图1,
+      &-图2 {
         .legend {
           height: px(40);
           display: flex;
           align-items: center;
           justify-content: center;
+          flex-wrap: wrap;
 
           >span {
             display: inline-block;
-            width: px(40);
-            height: px(20);
-            border-radius: px(4);
+            width: px(16);
+            height: px(10);
+            border-radius: px(2);
             margin: 0 px(10);
           }
 
@@ -280,11 +280,12 @@
           position: relative;
           display: flex;
           flex: 1;
-          > .main {
+
+          >.main {
             flex: 1;
           }
 
-          > .text {
+          >.text {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -294,6 +295,15 @@
             text-shadow: 0 0 px(20) #33a4fa;
             font-weight: bold;
           }
+        }
+      }
+
+      &-图2 {
+        width: px(290);
+        flex-shrink: 0;
+
+        .legend {
+          justify-content: flex-start;
         }
       }
     }
