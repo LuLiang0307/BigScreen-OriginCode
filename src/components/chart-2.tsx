@@ -5,13 +5,40 @@ import { px } from '../shared/px';
 
 export const Chart2 = () => {
   const divRef = useRef(null)
+  const myChart = useRef(null);
+  const data = [
+    { name: '城关区公安局', 2011: 1, 2012: 2.5 },
+    { name: '七里河区公安局', 2011: 4, 2012: 3 },
+    { name: '西固区公安局', 2011: 4.5, 2012: 5 },
+    { name: '安宁区公安局', 2011: 4.5, 2012: 4 },
+    { name: '红古区公安局', 2011: 6.5, 2012: 5 },
+    { name: '永登县公安局', 2011: 4, 2012: 7.5 },
+    { name: '皋兰县公安局', 2011: 8, 2012: 7.5 },
+    { name: '榆中县公安局', 2011: 6, 2012: 9 },
+    { name: '新区公安局', 2011: 8, 2012: 10 },
+  ];
   useEffect(() => {
-    const myChart = echarts.init(divRef.current)
-    myChart.setOption(createEchartOptions({
-      legend:{
-        data: ['破案排名1','破案排名2'],
+    setInterval(()=>{
+      const newData = [
+        { name: '城关区公安局', 2011: 1, 2012:  2.5},
+        { name: '七里河区公安局', 2011: 4, 2012: 3 },
+        { name: '西固区公安局', 2011: 4.5, 2012: 5 },
+        { name: '安宁区公安局', 2011: 4.5, 2012: 4 },
+        { name: '红古区公安局', 2011: 6.5, 2012: 5 },
+        { name: '永登县公安局', 2011: 4, 2012: 7.5 },
+        { name: '皋兰县公安局', 2011: 8, 2012: 7.5 },
+        { name: '榆中县公安局', 2011: 6, 2012: 6 },
+        { name: '新区公安局', 2011: 8, 2012: Math.random() * 10 },
+      ]
+      x(newData)
+    },3000)
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption(createEchartOptions({
+      legend: {
+        data: ['破案排名1', '破案排名2'],
         bottom: px(10),
-        textStyle: {color: 'white'},
+        textStyle: { color: 'white' },
         itemWidth: px(30),
         itemHeight: px(16)
       },
@@ -26,7 +53,7 @@ export const Chart2 = () => {
       yAxis: {
         axisTick: { show: false },
         type: 'category',
-        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红古区公安局', '永登县公安局', '皋兰县公安局', '榆中县公安局', '新区公安局'],
+        data: data.map(i => i.name),
         axisLabel: {
           formatter(val) {
             return val.replace('公安局', '\n公安局');
@@ -37,7 +64,7 @@ export const Chart2 = () => {
         {
           name: '破案排名1',
           type: 'bar',
-          data: [1, 4, 4.5, 4.5, 6.5, 4, 8, 6, 8],
+          data: data.map(i => i['2011']),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
@@ -54,7 +81,7 @@ export const Chart2 = () => {
         {
           name: '破案排名2',
           type: 'bar',
-          data: [2.5, 3, 5, 4, 5, 7.5, 7.5, 9, 10],
+          data: data.map(i => i['2012']),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
@@ -69,7 +96,11 @@ export const Chart2 = () => {
         }
       ]
     }))
-  }, [])
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
+  }, []);
   return (
     <div className='bordered 破获排名'>
       <h2>案件破获排名</h2>
