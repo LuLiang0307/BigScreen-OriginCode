@@ -19,17 +19,14 @@ export const Chart2 = () => {
   ];
   useEffect(() => {
     setInterval(()=>{
-      const newData = [
-        { name: '城关区公安局', 2011: 1, 2012:  2.5},
-        { name: '七里河区公安局', 2011: 4, 2012: 3 },
-        { name: '西固区公安局', 2011: 4.5, 2012: 5 },
-        { name: '安宁区公安局', 2011: 4.5, 2012: 4 },
-        { name: '红古区公安局', 2011: 6.5, 2012: 5 },
-        { name: '永登县公安局', 2011: 4, 2012: 7.5 },
-        { name: '皋兰县公安局', 2011: 8, 2012: 7.5 },
-        { name: '榆中县公安局', 2011: 6, 2012: 6 },
-        { name: '新区公安局', 2011: 8, 2012: Math.random() * 10 },
-      ]
+      let newData = []
+      data.map(i => {
+      let  obj ={name: '',2011: null,2012: null}
+      obj.name = i.name
+        obj[2011] = Math.random()*10
+        obj[2012] = Math.random()*10
+        newData.push(obj)
+      })
       x(newData)
     },3000)
   }, [])
